@@ -1,0 +1,14 @@
+@use './flex' as *;
+@use './size' as *;
+@use './vertical-rhythm' as *;
+
+@mixin page($pad: true) {
+  @include size(100vw, auto);
+  @include vertical-rhythm(1);
+  padding: 1rem;
+  will-change: opacity, transform;
+  @if ($pad == false) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

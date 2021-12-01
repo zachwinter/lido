@@ -1,0 +1,5 @@
+@mixin scroll-bar {
+  &::scrollbar {
+    display: none;
+  }
+}

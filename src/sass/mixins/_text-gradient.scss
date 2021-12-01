@@ -1,0 +1,7 @@
+@use '../config.scss' as *;
+
+@mixin text-gradient($color: $primary-color) {
+  background: linear-gradient(to top right, darken($color, 15%), lighten($color, 15%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

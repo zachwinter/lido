@@ -1,0 +1,17 @@
+@use "reset" as *;
+
+@mixin base($font-family) {
+  @include reset;
+  
+  body {
+    font-family: nth($font-family, 1);
+    font-weight: nth($font-family, 2);
+
+    * {
+      font-family: inherit;
+      font-weight: inherit;
+    }
+
+    strong { font-weight: nth($font-family, 2); }
+  }
+}

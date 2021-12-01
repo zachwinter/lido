@@ -1,0 +1,50 @@
+// Colors
+$white:#f8f8f8 !default;
+$black: #0a0a0a !default;
+$gray: #8c8c8c !default;
+$red: #da463c !default;
+$orange: #ea9f1c !default;
+$yellow: #f8d512 !default;
+$green: #05da00 !default;
+$blue: #0CDBE5 !default;
+$dark-blue: #5862AA !default;
+$purple: #701ea4 !default;
+$pink: #ff35b1 !default;
+
+$primary-color: $red;
+
+$base-blur: 20px !default;
+$border-radius: 3px;
+
+// Base Border Styles
+$base-border-width: 1px !default;
+$base-border-type: solid !default;
+$base-border-color: rgba(0, 0, 0, .15) !default;
+$base-border: $base-border-width $base-border-type $base-border-color !default;
+
+// Forms
+$form-control-height: 50px !default;
+$form-control-padding: 1rem;
+$form-control-font-size: 16px !default;
+$form-control-color: $primary-color !default;
+$form-control-background: transparent !default;
+$form-control-border-radius: $border-radius !default;
+$form-control-border-width: 1px !default;
+$form-control-border-type: solid !default;
+$form-control-border-color: $primary-color !default;
+$form-control-border: $form-control-border-width $form-control-border-type $form-control-border-color !default;
+
+// Base Transition
+$base-transition-duration: 350ms !default;
+$base-easing: cubic-bezier(.6,0,.4,1) !default;
+$base-transition: $base-transition-duration $base-easing !default;
+
+// Viewport
+$breakpoints: (
+  mobile-sm: 480,
+  mobile: 640,
+  tablet-sm: 768,
+  tablet: 1024,
+  laptop: 1280,
+  desktop: 1440,
+) !default;

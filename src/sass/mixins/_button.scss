@@ -1,0 +1,67 @@
+@use '../config' as *;
+@use './mobile' as *;
+
+@mixin button ($color: $primary-color, $outline: true, $loop: true) {
+  height: $form-control-height;
+  padding: 0 15px;
+  color: white[];
+  transition: all $hover-transition;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  // margin: 0 auto;
+  outline: 0;
+  line-height: calc(#{$form-control-height} - 2px);
+  border-radius: 5px;
+  will-change: transform, opacity;
+
+  &:hover {
+    // color: $color;
+    // border-color: $color;
+    transform: scale(1.025);
+    // color: $color;
+    animation: none;
+    opacity: 1;
+  }
+
+  &:active {
+    transform: scale(1);
+    transition-duration: 75ms;
+  }
+
+  @include mobile {
+    &:hover,
+    &:active {
+      transform: scale(1);
+      animation: none;
+    }
+  }
+
+
+  @if $outline {
+    background: rgba(white, .8);
+    color: $color;
+    border: 2px solid $color;
+    @if $loop == true {
+      @for $i from 1 through 50 {
+        &:nth-child(#{$i}) {
+          color: nth($palette, $i);
+          border-color: nth($palette, $i);
+        }
+      }
+    }
+  }
+
+  @else {
+    @if $loop == true {
+      @for $i from 1 through 50 {
+        &:nth-child(#{$i}) {
+          background: linear-gradient(to bottom left, darken(nth($palette, $i), 5%), lighten(nth($palette, $i), 5%));
+          color: white;
+        }
+      }
+    } @else {
+      background: linear-gradient(to bottom left, darken($color, 5%), lighten($color, 5%));
+    }
+  }
+}

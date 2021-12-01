@@ -1,0 +1,12 @@
+$max-width: 1440px;
+@use './size' as *;
+@use './vertical-rhythm' as *;
+
+@mixin container {
+  > div {
+    @include size(100%);
+    @include vertical-rhythm(1);
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+}

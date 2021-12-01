@@ -1,0 +1,33 @@
+@use 'size' as *;
+@use 'strip' as *;
+@use '../config' as *;
+
+@mixin form-control {
+  @include size(100%, $form-control-height);
+  @include strip; 
+  transition: all $base-transition; 
+  border: 1px rgba($form-control-border-color, .5) solid;
+  border-radius: $form-control-border-radius;
+  background: $form-control-background;
+  color: $form-control-color;
+  font-size: $form-control-font-size;
+  line-height: $form-control-height;
+  padding: 0 $form-control-padding;
+  font-weight: 700;
+
+  &::placeholder {
+    color: rgba($form-control-color, .5);
+    font-weight: 300;
+  }
+
+  &:active, &:focus {
+    border-color: $form-control-border-color;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:hover {
+    background: $form-control-background !important;
+    color: $form-control-color !important;
+  }
+}

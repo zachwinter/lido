@@ -1,0 +1,8 @@
+@use '../functions/spacer' as *;
+
+@mixin label {
+  display: flex;
+  margin-bottom: spacer(.25);
+  font-size: 1rem;
+  justify-content: space-between;
+}

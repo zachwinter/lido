@@ -1,0 +1,6 @@
+@use "../config.scss" as *;
+
+@mixin blur ($color: $white, $opacity: .2, $blur-size: 20px) {
+  background: rgba($color, $opacity);
+  backdrop-filter: blur($blur-size);
+}

@@ -1,0 +1,35 @@
+@use '../sass/global.scss' as *;
+
+.todo-item {
+  @include flex(center, space-between);
+  @include size(calc(100% - 2rem), 50px);
+  position: absolute;
+  padding: 1rem 0 1rem 0rem;
+  border-bottom: 1px solid rgba($black, .15);
+
+  .remove, .complete {
+    @include flex-width(50px);
+    height: 30px;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: $black;
+
+    svg { @include size(100%); }
+  }
+
+  .complete {
+    @include flex-width(30px);
+    border-radius: 100%;
+  }
+
+  &.complete .complete {
+    background: $green;
+    color: $white;
+  }
+
+  &.deleted {
+    opacity: .3;
+  }
+}

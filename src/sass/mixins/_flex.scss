@@ -1,0 +1,27 @@
+ @mixin flex ($align: center, $justify: center, $direction: row) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $direction;
+}
+
+ @mixin flex-grid {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	> * { flex: 1 1 auto; }
+}
+
+@mixin flex-width($width) {
+  min-width: $width;
+  max-width: $width;
+  width: $width;
+}
+
+@mixin flex-height($height) {
+  min-height: $height;
+  max-height: $height;
+  height: $height;
+}

@@ -1,0 +1,40 @@
+@use '../sass/global.scss' as *;
+
+.todo-list {
+  @include scale(width 100% 50%);
+  animation: fade-in $base-transition forwards;
+  height: 100vh;
+  padding: 1rem;
+
+  .input-container {
+    @include flex;
+  }
+
+  input {
+    @include form-control;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+  }
+
+  button {
+    @include form-control;
+    @include flex-width(50px);
+    @include flex;
+    color: $white;
+    background: $red;
+    border: 0;
+    border-radius: 0;
+  }
+
+  button + button {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    &.active {
+      color: $purple;
+    }
+  }
+
+  img { @include size(100%); }
+}
